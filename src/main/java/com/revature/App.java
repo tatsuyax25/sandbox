@@ -7,14 +7,24 @@ class App {
   public static void main ( String[] args ){
 
     Scanner scanner = new Scanner(System.in);
+    Robot robot1 = new Robot();
+    Robot robot2 = new Robot();
+    Robot robot3 = new Robot();
+
+    System.out.println(Robot.companyName);
+    robot1.fireLaserbeams();
+    System.out.println(robot1.powerStatus);
+    System.out.println(Robot.numRobots);
 
     String[] dinosaurs = {"Triceratops", "T-Rex", "Velociraptor", "Gigantosaurus"};
 
     boolean loopSwitch = true;
+    // The do while loop is guaranteed to run at least once
     do {
 
       System.out.println("\nWelcome to the dinosaur adoption app. Please select the type of dinosaur you would like to adopt.");
 
+      // Inerates through the dinosaurs array to create the menu
       for(int i = 0; i < 4; i++) {
       System.out.println(i + 1 + ") " + dinosaurs[i]);
       }
@@ -44,9 +54,7 @@ class App {
         default: {
         System.out.println("\nWait, you want to adopt a kangaroo? What!");
         }
-      }
-
-    } while(loopSwitch);
-
-  }
-}
+      } // Switch
+    } while(loopSwitch); // while loop
+  } // main method
+} // class
